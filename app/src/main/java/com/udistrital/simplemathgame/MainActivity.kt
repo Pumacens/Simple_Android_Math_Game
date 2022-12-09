@@ -18,21 +18,21 @@ class MainActivity : AppCompatActivity() {
         btnDividir = findViewById(R.id.btnDividir)
         btnMultiplicar = findViewById(R.id.btnMultiplicar)
 
-        var juego_activity_intent = Intent(this@MainActivity, JuegoActivity::class.java)
+        var juegoActivityIntent = Intent(this@MainActivity, JuegoActivity::class.java)
 
         btnSumar.setOnClickListener {
-            juego_activity_intent.putExtra("tituloOperacion", "Sumar")
-            startActivity(juego_activity_intent)
+            juegoActivityIntent.putExtra("tituloOperacion", "Sumar")
+            startActivity(juegoActivityIntent)
         }
 
         btnDividir.setOnClickListener {
-            juego_activity_intent.putExtra("tituloOperacion", "Dividir")
-            startActivity(juego_activity_intent)
+            juegoActivityIntent.putExtra("tituloOperacion", "Dividir")
+            startActivity(juegoActivityIntent)
         }
 
         btnMultiplicar.setOnClickListener {
-            juego_activity_intent.putExtra("tituloOperacion", "Multiplicar")
-            startActivity(juego_activity_intent)
+            juegoActivityIntent.putExtra("tituloOperacion", "Multiplicar")
+            startActivity(juegoActivityIntent)
         }
     }
 
