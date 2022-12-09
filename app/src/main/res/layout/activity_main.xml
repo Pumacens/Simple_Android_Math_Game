@@ -61,4 +61,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMultiplicar" />
 
+    <TextView
+        android:id="@+id/signing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Made by: Pumacens"
+        android:textColor="@color/white"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="629dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
