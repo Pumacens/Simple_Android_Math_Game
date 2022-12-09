@@ -14,11 +14,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/bevan"
+        android:fontFamily="@font/paytone_one"
         android:text="Operacion"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -113,7 +114,7 @@
         android:id="@+id/btnVerificar"
         android:layout_width="151dp"
         android:layout_height="50dp"
-        android:layout_marginTop="484dp"
+        android:layout_marginTop="416dp"
         android:backgroundTint="@color/math_purple"
         android:text="Verificar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,11 +123,12 @@
 
     <Button
         android:id="@+id/btnSiguiente"
-        android:layout_width="151dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="58dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/math_purple"
-        android:text="Siguiente"
+        android:enabled="false"
+        android:text="Siguiente Ejercicio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVerificar" />
@@ -135,8 +137,9 @@
         android:id="@+id/tvEjercicio"
         android:layout_width="281dp"
         android:layout_height="105dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="164dp"
         android:background="@color/math_black_transparent_90"
+        android:fontFamily="@font/paytone_one"
         android:gravity="center"
         android:text="Ejercicio"
         android:textColor="@color/white"
@@ -150,17 +153,31 @@
         android:id="@+id/etRespuesta"
         android:layout_width="275dp"
         android:layout_height="67dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="33dp"
         android:backgroundTint="#FFFFFF"
         android:ems="10"
         android:gravity="center"
         android:hint="Escribe tu respuesta"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:textColor="@color/white"
         android:textColorHint="#77FFFFFF"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEjercicio" />
+
+    <TextView
+        android:id="@+id/tvNotaDividir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:text="*Redondeado a 2 cifras"
+        android:textColor="#77FFFFFF"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etRespuesta" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
