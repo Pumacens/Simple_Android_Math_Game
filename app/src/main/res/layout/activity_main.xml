@@ -10,8 +10,8 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="411dp"
-        android:layout_height="174dp"
+        android:layout_width="0dp"
+        android:layout_height="201dp"
         android:layout_marginTop="64dp"
         android:background="@color/math_black_transparent_90"
         android:fontFamily="@font/paytone_one"
@@ -20,7 +20,6 @@
         android:textColor="@color/white"
         android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
