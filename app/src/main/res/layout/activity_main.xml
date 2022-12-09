@@ -65,9 +65,11 @@
         android:id="@+id/signing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="11dp"
         android:text="Made by: Pumacens"
         android:textColor="@color/white"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="629dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
