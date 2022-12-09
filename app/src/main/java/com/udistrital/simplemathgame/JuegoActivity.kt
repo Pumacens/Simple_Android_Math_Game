@@ -29,6 +29,7 @@ class JuegoActivity : AppCompatActivity() {
     var vidas: Int = 3
     val startTimerInMillis: Long  = 61000
     var timeLeftInMillis: Long = startTimerInMillis
+    var partidasJugadas: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +60,8 @@ class JuegoActivity : AppCompatActivity() {
             if (!respuestaUsuario.isEmpty()) {
                 pauseTimer()
 
+                partidasJugadas += 1
+
                 if (solucion == String.format("%.2f", respuestaUsuario.toDouble())){
                     puntaje += 10
                     actualizarEjercicioTextoEnRespuesta("Felicitaciones!, presiona Siguiente Ejercicio  :)")
@@ -77,7 +80,10 @@ class JuegoActivity : AppCompatActivity() {
             if (vidas > 0){
                 reiniciarJuego(operacion)
             } else {
-                println("")
+                var resultadosActivityIntent = Intent(applicationContext, ResultadosActivity::class.java)
+                resultadosActivityIntent.putExtra("partidasJugadas", partidasJugadas)
+                resultadosActivityIntent.putExtra("puntaje", puntaje)
+                startActivity(resultadosActivityIntent)
             }
         }
     }
