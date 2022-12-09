@@ -59,8 +59,8 @@ class JuegoActivity : AppCompatActivity() {
 
             if (!respuestaUsuario.isEmpty()) {
                 pauseTimer()
-
                 partidasJugadas += 1
+
 
                 if (solucion == String.format("%.2f", respuestaUsuario.toDouble())){
                     puntaje += 10
@@ -69,7 +69,18 @@ class JuegoActivity : AppCompatActivity() {
 
                 } else {
                     modificarVida()
-                    actualizarEjercicioTextoEnRespuesta("Respuesta errada: ${tvEjercicio.text} = $solucion")
+
+                    if (vidas == 0){
+                        terminarJuego()
+                    } else {
+                        if (operacion == "Dividir") {
+                            actualizarEjercicioTextoEnRespuesta("Respuesta errada: ${tvEjercicio.text} = $solucion")
+                        } else {
+                            actualizarEjercicioTextoEnRespuesta("Respuesta errada: ${tvEjercicio.text} = ${solucion.toFloat().toInt()}")
+                        }
+
+                    }
+
                 }
             } else {
                 Toast.makeText(applicationContext, "Por favor ingresa un valor.", Toast.LENGTH_LONG).show()
@@ -161,6 +172,11 @@ class JuegoActivity : AppCompatActivity() {
     fun modificarVida(){
         vidas -= 1
         tvVidas.text = vidas.toString()
+    }
+
+    fun terminarJuego(){
+        actualizarEjercicioTextoEnRespuesta("Te quedan 0 vidas. Juego terminado!")
+        btnSiguiente.text = "Resultados"
     }
 
 
